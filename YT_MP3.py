@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[10]:
 
 
 # importing packages
@@ -15,8 +15,7 @@ yt = YouTube(input("請輸入影片地址"))
 video = yt.streams.filter(only_audio=True).first()
   
 # check for destination to save file
-print("請輸入存檔地址")
-destination = str(input(">> ")) or '.'
+destination = input("請輸入存檔地址")
   
 # download the file
 out_file = video.download(output_path=destination)
@@ -27,5 +26,7 @@ new_file = base + '.mp3'
 os.rename(out_file, new_file)
   
 # result of success
-print(yt.title + " has been successfully downloaded.")
+#print(yt.title + "已成功下載。")
+print("destination = " + (new_file))
+print(yt.title +"已成功下載至目的地資料夾.")
 
